@@ -1,0 +1,2 @@
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.WebMVC\obj\Debug\DeepChecks.WebMVC.csprojAssemblyReference.cache
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.WebMVC\obj\Debug\DeepChecks.WebMVC.csproj.CoreCompileInputs.cache

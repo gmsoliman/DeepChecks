@@ -1,0 +1,16 @@
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Models\bin\Debug\DeepChecks.Models.dll
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Models\bin\Debug\DeepChecks.Models.pdb
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Models\obj\Debug\DeepChecks.Models.csprojAssemblyReference.cache
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Models\obj\Debug\DeepChecks.Models.csproj.CoreCompileInputs.cache
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Models\obj\Debug\DeepChecks.Models.dll
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Models\obj\Debug\DeepChecks.Models.pdb
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Models\bin\Debug\DeepChecks.Models.dll.config
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Models\bin\Debug\EntityFramework.dll
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Models\bin\Debug\EntityFramework.xml
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Models\obj\Debug\DeepChecks.Models.csproj.CopyComplete

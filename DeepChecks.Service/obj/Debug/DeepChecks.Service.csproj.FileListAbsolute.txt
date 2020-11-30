@@ -1,0 +1,16 @@
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Service\bin\Debug\DeepChecks.Service.dll
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Service\bin\Debug\DeepChecks.Service.pdb
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Service\obj\Debug\DeepChecks.Service.csprojAssemblyReference.cache
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Service\obj\Debug\DeepChecks.Service.csproj.CoreCompileInputs.cache
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Service\obj\Debug\DeepChecks.Service.dll
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Service\obj\Debug\DeepChecks.Service.pdb
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Service\bin\Debug\DeepChecks.Service.dll.config
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Service\bin\Debug\EntityFramework.dll
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Service\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Service\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Service\bin\Debug\EntityFramework.xml
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Service\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Service\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Service\obj\Debug\DeepChecks.Service.csproj.CopyComplete
