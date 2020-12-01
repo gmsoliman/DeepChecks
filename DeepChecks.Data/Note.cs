@@ -19,5 +19,9 @@ namespace DeepChecks.Data
         [ForeignKey(nameof(Check))]
         public int CheckId { get; set; }
         public virtual Check Check { get; set; }
+
+        [ForeignKey(nameof(Participant))]
+        public int ParticipantId { get; set; }
+        public virtual Participant Participant { get; set; }
     }
 }

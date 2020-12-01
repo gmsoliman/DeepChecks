@@ -33,6 +33,7 @@ namespace DeepChecks.Data
         }
 
         public DbSet<Relationship> Relationships { get; set; }
+        public DbSet<Participant> Participants { get; set; }
         public DbSet<Check> Checks { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Entry> Entries { get; set; }
