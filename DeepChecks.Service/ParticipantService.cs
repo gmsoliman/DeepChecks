@@ -47,11 +47,62 @@ namespace DeepChecks.Service
                             e =>
                                 new ParticipantListItem
                                 {
+                                    ParticipantId = e.ParticipantId,
                                     FirstName = e.FirstName,
-                                    LastName = e.LastName,
-                                    Email = e.Email
+                                    LastName = e.LastName
                                 });
                 return query.ToArray();
+            }
+        }
+
+        public ParticipantDetail GetParticipantById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Participants
+                        .Single(e => e.ParticipantId == id && e.OwnerId == _userId);
+                    return
+                        new ParticipantDetail
+                        {
+                            ParticipantId = entity.ParticipantId,
+                            FirstName = entity.FirstName,
+                            LastName = entity.LastName,
+                            Email = entity.Email
+                        };
+            }
+        }
+
+        public bool UpdateParticipant(ParticipantDetail model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Participants
+                        .Single(e => e.ParticipantId == model.ParticipantId && e.OwnerId == _userId);
+
+                entity.FirstName = model.FirstName;
+                entity.LastName = model.LastName;
+                entity.Email = model.Email;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteParticipant(int participantId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Participants
+                        .Single(e => e.ParticipantId == participantId && e.OwnerId == _userId);
+
+                ctx.Participants.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }
