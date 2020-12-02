@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DeepChecks.Data
+namespace DeepChecks.Data.Entities
 {
     public class Participant
     {
@@ -16,8 +16,8 @@ namespace DeepChecks.Data
         [Required]
         public string LastName { get; set; }
         [Required]
-        [EmailAddress]
         public string Email { get; set; }
+        [Required]
         public Guid OwnerId { get; set; }
 
         public virtual ICollection<Relationship> Relationships { get; set; } = new List<Relationship>();

@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeepChecks.Data", "DeepChec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeepChecks.Models", "DeepChecks.Models\DeepChecks.Models.csproj", "{D4905556-047A-4FA5-B0D4-D1397724C896}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeepChecks.Service", "DeepChecks.Service\DeepChecks.Service.csproj", "{B405F491-2879-4D90-8721-AFEA4CB47247}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeepChecks.Services", "DeepChecks.Service\DeepChecks.Services.csproj", "{B405F491-2879-4D90-8721-AFEA4CB47247}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

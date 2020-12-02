@@ -170,6 +170,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ParticipantController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -234,6 +235,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Participant\Index.cshtml" />
+    <Content Include="Views\Participant\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -260,9 +263,9 @@
       <Project>{d4905556-047a-4fa5-b0d4-d1397724c896}</Project>
       <Name>DeepChecks.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DeepChecks.Service\DeepChecks.Service.csproj">
+    <ProjectReference Include="..\DeepChecks.Service\DeepChecks.Services.csproj">
       <Project>{b405f491-2879-4d90-8721-afea4cb47247}</Project>
-      <Name>DeepChecks.Service</Name>
+      <Name>DeepChecks.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

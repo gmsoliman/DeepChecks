@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ParticipantService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DeepChecks.Data\DeepChecks.Data.csproj">
+      <Project>{c17735b1-9fe0-451d-9b9f-961c2c9fc49a}</Project>
+      <Name>DeepChecks.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DeepChecks.Models\DeepChecks.Models.csproj">
+      <Project>{d4905556-047a-4fa5-b0d4-d1397724c896}</Project>
+      <Name>DeepChecks.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

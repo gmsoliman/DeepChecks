@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DeepChecks.Data
+namespace DeepChecks.Data.Entities
 {
     public class Relationship
     {
@@ -20,6 +20,9 @@ namespace DeepChecks.Data
         public int CheckId { get; set; }
         public virtual Check Check { get; set; }
 
+        [Required]
         public string RelationshipName { get; set; }
+        [Required]
+        public Guid OwnerId { get; set; }
     }
 }

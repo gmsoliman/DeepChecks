@@ -6,15 +6,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DeepChecks.Data
+namespace DeepChecks.Data.Entities
 {
     public class Note
     {
         [Key]
         public int NoteId { get; set; }
+        [Required]
         public string NoteTitle { get; set; }
         [Required]
         public string NoteContent { get; set; }
+        [Required]
+        public Guid OwnerId { get; set; }
 
         [ForeignKey(nameof(Check))]
         public int CheckId { get; set; }
