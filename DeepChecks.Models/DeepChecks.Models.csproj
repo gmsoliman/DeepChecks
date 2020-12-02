@@ -57,6 +57,12 @@
     <Compile Include="Category\CategoryListItem.cs" />
     <Compile Include="Check\CheckCreate.cs" />
     <Compile Include="Check\CheckListItem.cs" />
+    <Compile Include="Entry\EntryCreate.cs" />
+    <Compile Include="Entry\EntryDetail.cs" />
+    <Compile Include="Entry\EntryListItem.cs" />
+    <Compile Include="Note\NoteCreate.cs" />
+    <Compile Include="Note\NoteDetail.cs" />
+    <Compile Include="Note\NoteListItem.cs" />
     <Compile Include="Participant\ParticipantCreate.cs" />
     <Compile Include="Participant\ParticipantDetail.cs" />
     <Compile Include="Participant\ParticipantListItem.cs" />

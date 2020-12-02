@@ -9,6 +9,7 @@ namespace DeepChecks.Models.Category
 {
     public class CategoryListItem
     {
+        public int CategoryId { get; set; }
         [Display(Name="Category")]
         public string CategoryTitle { get; set; }
         [Display(Name = "Description")]

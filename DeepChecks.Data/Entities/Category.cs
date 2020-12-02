@@ -17,9 +17,9 @@ namespace DeepChecks.Data.Entities
         [Required]
         public string CategoryDescription { get; set; }
 
-        [ForeignKey(nameof(Check))]
-        public int CheckId { get; set; }
-        public virtual Check Check { get; set; }
+        //[ForeignKey(nameof(Check))]
+        //public int? CheckId { get; set; }
+        //public virtual Check Check { get; set; }
 
         public virtual ICollection<Entry> Entries { get; set; } = new List<Entry>();
     }

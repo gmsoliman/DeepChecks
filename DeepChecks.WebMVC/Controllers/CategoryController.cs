@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace DeepChecks.WebMVC.Controllers
 {
+    [Authorize]
     public class CategoryController : Controller
     {
         // GET: Category

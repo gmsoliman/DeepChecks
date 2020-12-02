@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace DeepChecks.WebMVC.Controllers
 {
+    [Authorize]
     public class ParticipantController : Controller
     {
         // GET: Participant

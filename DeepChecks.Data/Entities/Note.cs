@@ -12,7 +12,6 @@ namespace DeepChecks.Data.Entities
     {
         [Key]
         public int NoteId { get; set; }
-        [Required]
         public string NoteTitle { get; set; }
         [Required]
         public string NoteContent { get; set; }

@@ -1,0 +1,58 @@
+﻿@model DeepChecks.Models.Note.NoteDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NoteDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NoteId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoteId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoteTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoteTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoteContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoteContent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ParticipantId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ParticipantId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.NoteId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
