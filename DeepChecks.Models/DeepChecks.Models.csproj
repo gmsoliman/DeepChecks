@@ -55,6 +55,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Category\CategoryListItem.cs" />
+    <Compile Include="Check\CheckCreate.cs" />
+    <Compile Include="Check\CheckListItem.cs" />
     <Compile Include="Participant\ParticipantCreate.cs" />
     <Compile Include="Participant\ParticipantDetail.cs" />
     <Compile Include="Participant\ParticipantListItem.cs" />
