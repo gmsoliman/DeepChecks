@@ -60,6 +60,7 @@
     <Compile Include="NoteService.cs" />
     <Compile Include="ParticipantService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RelationshipService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

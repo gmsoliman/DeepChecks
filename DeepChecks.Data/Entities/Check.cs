@@ -19,8 +19,10 @@ namespace DeepChecks.Data.Entities
         [Required]
         public Guid OwnerId { get; set; }
 
-        public virtual ICollection<Relationship> Relationships { get; set; } = new List<Relationship>();
-        public virtual ICollection<Category> Categories { get; set; } = new List<Category>();
+        [ForeignKey(nameof(Relationship))]
+        public int RelationshipId { get; set; }
+        public virtual Relationship Relationship { get; set; }
+        //public virtual ICollection<Category> Categories { get; set; } = new List<Category>();
         public virtual ICollection<Note> Notes { get; set; } = new List<Note>();
     }
 }

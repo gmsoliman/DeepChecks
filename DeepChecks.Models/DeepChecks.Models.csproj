@@ -67,6 +67,8 @@
     <Compile Include="Participant\ParticipantDetail.cs" />
     <Compile Include="Participant\ParticipantListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relationship\RelationshipCreate.cs" />
+    <Compile Include="Relationship\RelationshipListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

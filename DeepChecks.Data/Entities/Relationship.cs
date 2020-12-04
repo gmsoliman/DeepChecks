@@ -17,12 +17,12 @@ namespace DeepChecks.Data.Entities
         [Required]
         public Guid OwnerId { get; set; }
 
-        [ForeignKey(nameof(Participant))]
-        public int ParticipantId { get; set; }
-        public virtual Participant Participant { get; set; }
-        
-        [ForeignKey(nameof(Check))]
-        public int CheckId { get; set; }
-        public virtual Check Check { get; set; }
+        public virtual ICollection<Participant> Participants { get; set; } = new List<Participant>();
+        public Relationship()
+        {
+            this.Participants = new HashSet<Participant>();
+        }
+        public virtual ICollection<Check> Checks { get; set; } = new List<Check>();
+
     }
 }

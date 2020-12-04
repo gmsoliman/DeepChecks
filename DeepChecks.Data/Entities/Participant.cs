@@ -21,6 +21,10 @@ namespace DeepChecks.Data.Entities
         public Guid OwnerId { get; set; }
 
         public virtual ICollection<Relationship> Relationships { get; set; } = new List<Relationship>();
+        public Participant()
+        {
+            this.Relationships = new HashSet<Relationship>();
+        }
         public virtual ICollection<Note> Notes { get; set; } = new List<Note>();
         public virtual ICollection<Entry> Entries { get; set; } = new List<Entry>();
     }
