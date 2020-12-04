@@ -260,11 +260,15 @@
     <Content Include="Views\Note\Details.cshtml" />
     <Content Include="Views\Note\Edit.cshtml" />
     <Content Include="Views\Note\Delete.cshtml" />
+    <Content Include="Views\Relationship\Index.cshtml" />
+    <Content Include="Views\Relationship\Create.cshtml" />
+    <Content Include="Views\Relationship\Details.cshtml" />
+    <Content Include="Views\Relationship\Edit.cshtml" />
+    <Content Include="Views\Relationship\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Category\" />
-    <Folder Include="Views\Relationship\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

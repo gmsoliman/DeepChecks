@@ -20,3 +20,4 @@ C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.D
 C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Data\obj\Debug\DeepChecks.Data.Migrations.SecondMigration.resources
 C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Data\obj\Debug\DeepChecks.Data.Migrations.ThirdMigration.resources
 C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Data\obj\Debug\DeepChecks.Data.Migrations.SeedContent.resources
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Data\obj\Debug\DeepChecks.Data.Migrations.FourthMigration.resources
