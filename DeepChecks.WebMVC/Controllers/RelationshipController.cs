@@ -12,7 +12,7 @@ namespace DeepChecks.WebMVC.Controllers
     [Authorize]
     public class RelationshipController : Controller
     {
-        // GET: Participant
+        // GET: Relationship
         public ActionResult Index()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
@@ -38,7 +38,7 @@ namespace DeepChecks.WebMVC.Controllers
 
             if (service.CreateRelationship(model))
             {
-                TempData["SaveResult"] = "The relationship was successfully created.";
+                TempData["SaveResult"] = "Your relationship was created.";
                 return RedirectToAction("Index");
             };
 
@@ -84,11 +84,11 @@ namespace DeepChecks.WebMVC.Controllers
 
             if (service.UpdateRelationship(model))
             {
-                TempData["SaveResult"] = "Your relationship was successfully updated.";
+                TempData["SaveResult"] = "Your relationship name has been updated.";
                 return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "Your relationship could not be updated.");
+            ModelState.AddModelError("", "Your relationship name could not be updated.");
             return View(model);
         }
 
@@ -110,7 +110,7 @@ namespace DeepChecks.WebMVC.Controllers
 
             service.DeleteRelationship(id);
 
-            TempData["SaveResult"] = "The relationship was deleted";
+            TempData["SaveResult"] = "Your relationship was deleted";
 
             return RedirectToAction("Index");
         }

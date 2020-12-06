@@ -13,11 +13,11 @@ namespace DeepChecks.WebMVC.Controllers
     public class ParticipantController : Controller
     {
         // GET: Participant
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new ParticipantService(userId);
-            var model = service.GetParticipants();
+            var model = service.GetParticipantByCheck(id);
 
             return View(model);
         }
@@ -25,6 +25,8 @@ namespace DeepChecks.WebMVC.Controllers
         //GET
         public ActionResult Create()
         {
+            //PopulateChecksByRelationship(id);
+            PopulateChecks();
             return View();
         }
 
@@ -39,7 +41,7 @@ namespace DeepChecks.WebMVC.Controllers
             if (service.CreateParticipant(model))
             {
                 TempData["SaveResult"] = "The participant was successfully created.";
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Participant", new { id = model.CheckId });
             };
 
             ModelState.AddModelError("", "Participant could not be created.");
@@ -60,21 +62,26 @@ namespace DeepChecks.WebMVC.Controllers
             var service = CreateParticipantService();
             var detail = service.GetParticipantById(id);
             var model =
-                new ParticipantDetail
+                new ParticipantListItem
                 {
                     ParticipantId = detail.ParticipantId,
                     FirstName = detail.FirstName,
                     LastName = detail.LastName,
-                    Email = detail.Email
+                    CheckId = detail.CheckId
                 };
+            PopulateChecks(detail.CheckId);
             return View(model);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, ParticipantDetail model)
+        public ActionResult Edit(int id, ParticipantListItem model)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid)
+            {
+                PopulateChecks(model.CheckId);
+                return View(model);
+            }
 
             if(model.ParticipantId != id)
             {
@@ -87,7 +94,7 @@ namespace DeepChecks.WebMVC.Controllers
             if (service.UpdateParticipant(model))
             {
                 TempData["SaveResult"] = "The participant was successfully updated.";
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Participant", new { id = model.CheckId });
             }
 
             ModelState.AddModelError("", "The participant could not be updated.");
@@ -114,7 +121,7 @@ namespace DeepChecks.WebMVC.Controllers
 
             TempData["SaveResult"] = "The participant was deleted";
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Relationship");
         }
 
         private ParticipantService CreateParticipantService()
@@ -122,6 +129,19 @@ namespace DeepChecks.WebMVC.Controllers
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new ParticipantService(userId);
             return service;
+        }
+        //private void PopulateChecksByRelationship(int id)
+        //{
+        //    ViewBag.CheckId = new SelectList(new CheckService(Guid.Parse(User.Identity.GetUserId())).GetCheckByRelationship(id), "CheckId", "CheckTitle");
+        //}
+
+        private void PopulateChecks()
+        {
+            ViewBag.CheckId = new SelectList(new CheckService(Guid.Parse(User.Identity.GetUserId())).GetChecks(), "CheckId", "CheckTitle");
+        }
+        private void PopulateChecks(int id)
+        {
+            ViewBag.CheckId = new SelectList(new CheckService(Guid.Parse(User.Identity.GetUserId())).GetChecks(), "CheckId", "CheckTitle", id);
         }
     }
 }

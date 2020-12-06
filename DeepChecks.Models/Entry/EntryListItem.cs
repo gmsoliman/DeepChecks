@@ -10,5 +10,7 @@ namespace DeepChecks.Models.Entry
     {
         public int EntryId { get; set; }
         public string EntryContent { get; set; }
+        public int CategoryId { get; set; }
+        public int ParticipantId { get; set; }
     }
 }

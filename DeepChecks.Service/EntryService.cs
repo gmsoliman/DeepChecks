@@ -49,12 +49,14 @@ namespace DeepChecks.Service
                                 {
                                     EntryId = e.EntryId,
                                     EntryContent = e.EntryContent,
+                                    CategoryId = e.CategoryId,
+                                    ParticipantId = e.ParticipantId
                                 });
                 return query.ToArray();
             }
         }
 
-        public EntryDetail GetEntryById(int id)
+        public EntryListItem GetEntryById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -63,7 +65,7 @@ namespace DeepChecks.Service
                         .Entries
                         .Single(e => e.EntryId == id && e.OwnerId == _userId);
                 return
-                    new EntryDetail
+                    new EntryListItem
                     {
                         EntryId = entity.EntryId,
                         EntryContent = entity.EntryContent,
@@ -73,7 +75,29 @@ namespace DeepChecks.Service
             }
         }
 
-        public bool UpdateEntry(EntryDetail model)
+        public IEnumerable<EntryListItem> GetParticipantEntryByCatId(int participantId, int categoryId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Entries
+                        .Where(e => e.ParticipantId == participantId && e.CategoryId == categoryId && e.OwnerId == _userId)
+                        .Select(
+                            e =>
+                                new EntryListItem
+                                {
+                                    EntryId = e.EntryId,
+                                    EntryContent = e.EntryContent,
+                                    CategoryId = e.CategoryId,
+                                    ParticipantId = e.ParticipantId
+                                }
+                        );
+                return query.ToArray();
+            }
+        }
+
+        public bool UpdateEntry(EntryListItem model)
         {
             using (var ctx = new ApplicationDbContext())
             {

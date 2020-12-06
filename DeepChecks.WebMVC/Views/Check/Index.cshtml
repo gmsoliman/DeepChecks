@@ -4,7 +4,8 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+@*Deep Checks for "X" Relationship*@
+<h2>Deep Checks</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -23,9 +24,6 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.CheckId)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.CheckTitle)
         </th>
         <th>
@@ -38,9 +36,6 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.CheckId)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.CheckTitle)
             </td>
             <td>
@@ -48,10 +43,12 @@
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.CheckId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.CheckId }) |
+                @Html.ActionLink("View Participants", "Index", "Participant", new { id = item.CheckId }, null) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.CheckId })
             </td>
         </tr>
     }
+    @Html.ActionLink("Back to Relationships", "Index", "Relationship")
+
 
 </table>

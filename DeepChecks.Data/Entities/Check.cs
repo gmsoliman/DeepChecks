@@ -23,6 +23,7 @@ namespace DeepChecks.Data.Entities
         public int RelationshipId { get; set; }
         public virtual Relationship Relationship { get; set; }
         //public virtual ICollection<Category> Categories { get; set; } = new List<Category>();
-        public virtual ICollection<Note> Notes { get; set; } = new List<Note>();
+        //public virtual ICollection<Note> Notes { get; set; } = new List<Note>();
+        public virtual ICollection<Participant> Participants { get; set; } = new List<Participant>();
     }
 }

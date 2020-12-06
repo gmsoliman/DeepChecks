@@ -14,9 +14,36 @@ namespace DeepChecks.Data.Migrations
                         CategoryId = c.Int(nullable: false, identity: true),
                         CategoryTitle = c.String(nullable: false),
                         CategoryDescription = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.CategoryId);
+            
+            CreateTable(
+                "dbo.Entry",
+                c => new
+                    {
+                        EntryId = c.Int(nullable: false, identity: true),
+                        EntryContent = c.String(nullable: false),
+                        OwnerId = c.Guid(nullable: false),
+                        CategoryId = c.Int(nullable: false),
+                        ParticipantId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.EntryId)
+                .ForeignKey("dbo.Category", t => t.CategoryId, cascadeDelete: true)
+                .ForeignKey("dbo.Participant", t => t.ParticipantId, cascadeDelete: true)
+                .Index(t => t.CategoryId)
+                .Index(t => t.ParticipantId);
+            
+            CreateTable(
+                "dbo.Participant",
+                c => new
+                    {
+                        ParticipantId = c.Int(nullable: false, identity: true),
+                        FirstName = c.String(nullable: false),
+                        LastName = c.String(nullable: false),
+                        OwnerId = c.Guid(nullable: false),
                         CheckId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.CategoryId)
+                .PrimaryKey(t => t.ParticipantId)
                 .ForeignKey("dbo.Check", t => t.CheckId, cascadeDelete: true)
                 .Index(t => t.CheckId);
             
@@ -35,40 +62,14 @@ namespace DeepChecks.Data.Migrations
                 .Index(t => t.RelationshipId);
             
             CreateTable(
-                "dbo.Note",
-                c => new
-                    {
-                        NoteId = c.Int(nullable: false, identity: true),
-                        NoteTitle = c.String(),
-                        NoteContent = c.String(nullable: false),
-                        CheckId = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.NoteId)
-                .ForeignKey("dbo.Check", t => t.CheckId, cascadeDelete: true)
-                .Index(t => t.CheckId);
-            
-            CreateTable(
                 "dbo.Relationship",
                 c => new
                     {
                         RelationshipId = c.Int(nullable: false, identity: true),
-                        Name = c.String(nullable: false),
+                        RelationshipName = c.String(nullable: false),
                         OwnerId = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.RelationshipId);
-            
-            CreateTable(
-                "dbo.Entry",
-                c => new
-                    {
-                        EntryId = c.Int(nullable: false, identity: true),
-                        EntryContent = c.String(nullable: false),
-                        OwnerId = c.Guid(nullable: false),
-                        CategoryId = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.EntryId)
-                .ForeignKey("dbo.Category", t => t.CategoryId, cascadeDelete: true)
-                .Index(t => t.CategoryId);
             
             CreateTable(
                 "dbo.IdentityRole",
@@ -148,27 +149,27 @@ namespace DeepChecks.Data.Migrations
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
-            DropForeignKey("dbo.Entry", "CategoryId", "dbo.Category");
-            DropForeignKey("dbo.Category", "CheckId", "dbo.Check");
+            DropForeignKey("dbo.Entry", "ParticipantId", "dbo.Participant");
+            DropForeignKey("dbo.Participant", "CheckId", "dbo.Check");
             DropForeignKey("dbo.Check", "RelationshipId", "dbo.Relationship");
-            DropForeignKey("dbo.Note", "CheckId", "dbo.Check");
+            DropForeignKey("dbo.Entry", "CategoryId", "dbo.Category");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
-            DropIndex("dbo.Entry", new[] { "CategoryId" });
-            DropIndex("dbo.Note", new[] { "CheckId" });
             DropIndex("dbo.Check", new[] { "RelationshipId" });
-            DropIndex("dbo.Category", new[] { "CheckId" });
+            DropIndex("dbo.Participant", new[] { "CheckId" });
+            DropIndex("dbo.Entry", new[] { "ParticipantId" });
+            DropIndex("dbo.Entry", new[] { "CategoryId" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
-            DropTable("dbo.Entry");
             DropTable("dbo.Relationship");
-            DropTable("dbo.Note");
             DropTable("dbo.Check");
+            DropTable("dbo.Participant");
+            DropTable("dbo.Entry");
             DropTable("dbo.Category");
         }
     }

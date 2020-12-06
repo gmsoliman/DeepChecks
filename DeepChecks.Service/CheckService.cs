@@ -26,6 +26,7 @@ namespace DeepChecks.Service
                     OwnerId = _userId,
                     CheckTitle = model.CheckTitle,
                     CheckDate = model.CheckDate,
+                    RelationshipId = model.RelationshipId
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -48,7 +49,8 @@ namespace DeepChecks.Service
                                 {
                                     CheckId = e.CheckId,
                                     CheckTitle = e.CheckTitle,
-                                    CheckDate = e.CheckDate
+                                    CheckDate = e.CheckDate,
+                                    RelationshipId = e.RelationshipId
                                 });
                 return query.ToArray();
             }
@@ -68,7 +70,29 @@ namespace DeepChecks.Service
                         CheckId = entity.CheckId,
                         CheckTitle = entity.CheckTitle,
                         CheckDate = entity.CheckDate,
+                        RelationshipId = entity.RelationshipId
                     };
+            }
+        }
+
+        public IEnumerable<CheckListItem> GetCheckByRelationship (int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Checks
+                        .Where(e => e.RelationshipId == id && e.OwnerId == _userId)
+                        .Select(
+                            e =>
+                                new CheckListItem
+                                {
+                                    CheckId = e.CheckId,
+                                    CheckTitle = e.CheckTitle,
+                                    CheckDate = e.CheckDate,
+                                    RelationshipId = e.RelationshipId
+                                });
+                return query.ToArray();
             }
         }
 
@@ -83,6 +107,7 @@ namespace DeepChecks.Service
 
                 entity.CheckTitle = model.CheckTitle;
                 entity.CheckDate = model.CheckDate;
+                entity.RelationshipId = model.RelationshipId;
 
                 return ctx.SaveChanges() == 1;
             }

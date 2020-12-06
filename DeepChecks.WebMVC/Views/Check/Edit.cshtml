@@ -18,6 +18,14 @@
     @Html.HiddenFor(model => model.CheckId)
 
     <div class="form-group">
+        @Html.LabelFor(model => model.RelationshipId, "Relationship", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("RelationshipId", null, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.RelationshipId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
         @Html.LabelFor(model => model.CheckTitle, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.CheckTitle, new { htmlAttributes = new { @class = "form-control" } })
@@ -42,7 +50,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List of Deep Checks", "Index", new { id = Model.RelationshipId })
 </div>
 
 @section Scripts {

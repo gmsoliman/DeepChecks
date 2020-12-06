@@ -242,12 +242,9 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Participant\Index.cshtml" />
     <Content Include="Views\Participant\Create.cshtml" />
-    <Content Include="Views\Participant\Details.cshtml" />
     <Content Include="Views\Participant\Edit.cshtml" />
     <Content Include="Views\Participant\Delete.cshtml" />
     <Content Include="Views\Check\Index.cshtml" />
-    <Content Include="Views\Check\Create.cshtml" />
-    <Content Include="Views\Check\Details.cshtml" />
     <Content Include="Views\Check\Edit.cshtml" />
     <Content Include="Views\Check\Delete.cshtml" />
     <Content Include="Views\Entry\Index.cshtml" />
@@ -262,13 +259,15 @@
     <Content Include="Views\Note\Delete.cshtml" />
     <Content Include="Views\Relationship\Index.cshtml" />
     <Content Include="Views\Relationship\Create.cshtml" />
-    <Content Include="Views\Relationship\Details.cshtml" />
     <Content Include="Views\Relationship\Edit.cshtml" />
     <Content Include="Views\Relationship\Delete.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Category\Details.cshtml" />
+    <Content Include="Views\Check\Create.cshtml" />
+    <Content Include="Views\Relationship\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Category\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

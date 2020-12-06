@@ -7,14 +7,22 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>CheckCreate</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.RelationshipId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("RelationshipId", null, "Select Relationship", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.RelationshipId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
         <div class="form-group">
             @Html.LabelFor(model => model.CheckTitle, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -40,7 +48,10 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @*figure out a way to go back to list of checks by relationshipid*@
+
+    @*@Html.ActionLink("Back to Deep Checks", "Index")*@
+    @*@Html.ActionLink("Back to Deep Checks", "Index", new { id = Model.RelationshipId })*@
 </div>
 
 @section Scripts {

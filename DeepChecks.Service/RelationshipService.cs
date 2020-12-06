@@ -33,6 +33,18 @@ namespace DeepChecks.Service
             }
         }
 
+        //public bool AddParticipantToRelationship(int participantId, int relationshipId)
+        //{
+        //    using (var ctx = new ApplicationDbContext())
+        //    {
+        //        var relationship = ctx.Relationships.Single(e => e.RelationshipId == relationshipId);
+        //        var participant = ctx.Participants.Single(e => e.ParticipantId == participantId);
+
+        //        relationship.Participants.Add(participant);
+        //        return ctx.SaveChanges() == 1;
+        //    }
+        //}
+
         public IEnumerable<RelationshipListItem> GetRelationships()
         {
             using (var ctx = new ApplicationDbContext())

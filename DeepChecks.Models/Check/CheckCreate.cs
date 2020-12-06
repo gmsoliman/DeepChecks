@@ -10,5 +10,6 @@ namespace DeepChecks.Models.Check
     {
         public string CheckTitle { get; set; }
         public DateTimeOffset CheckDate { get; set; }
+        public int RelationshipId { get; set; }
     }
 }

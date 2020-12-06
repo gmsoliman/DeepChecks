@@ -26,7 +26,7 @@ namespace DeepChecks.Service
                     OwnerId = _userId,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
-                    Email = model.Email
+                    CheckId = model.CheckId
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -49,13 +49,14 @@ namespace DeepChecks.Service
                                 {
                                     ParticipantId = e.ParticipantId,
                                     FirstName = e.FirstName,
-                                    LastName = e.LastName
+                                    LastName = e.LastName,
+                                    CheckId = e.CheckId
                                 });
                 return query.ToArray();
             }
         }
 
-        public ParticipantDetail GetParticipantById(int id)
+        public ParticipantListItem GetParticipantById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -64,17 +65,38 @@ namespace DeepChecks.Service
                         .Participants
                         .Single(e => e.ParticipantId == id && e.OwnerId == _userId);
                     return
-                        new ParticipantDetail
+                        new ParticipantListItem
                         {
                             ParticipantId = entity.ParticipantId,
                             FirstName = entity.FirstName,
                             LastName = entity.LastName,
-                            Email = entity.Email
+                            CheckId = entity.CheckId
                         };
             }
         }
 
-        public bool UpdateParticipant(ParticipantDetail model)
+        public IEnumerable<ParticipantListItem> GetParticipantByCheck(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Participants
+                        .Where(e => e.CheckId == id && e.OwnerId == _userId)
+                        .Select(
+                            e => 
+                                new ParticipantListItem
+                                {
+                                    ParticipantId = e.ParticipantId,
+                                    FirstName = e.FirstName,
+                                    LastName = e.LastName,
+                                    CheckId = e.CheckId
+                                });
+                return query.ToArray();
+            }
+        }
+
+        public bool UpdateParticipant(ParticipantListItem model)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -85,7 +107,7 @@ namespace DeepChecks.Service
 
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
-                entity.Email = model.Email;
+                entity.CheckId = model.CheckId;
 
                 return ctx.SaveChanges() == 1;
             }

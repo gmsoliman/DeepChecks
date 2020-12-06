@@ -60,29 +60,13 @@
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Entities\Note.cs" />
     <Compile Include="Entities\Participant.cs" />
-    <Compile Include="Migrations\202011300946453_InitialCreate.cs" />
-    <Compile Include="Migrations\202011300946453_InitialCreate.Designer.cs">
-      <DependentUpon>202011300946453_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202012041936083_InitialCreate.cs" />
+    <Compile Include="Migrations\202012041936083_InitialCreate.Designer.cs">
+      <DependentUpon>202012041936083_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202012012106384_InitialMigration.cs" />
-    <Compile Include="Migrations\202012012106384_InitialMigration.Designer.cs">
-      <DependentUpon>202012012106384_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012020710241_SecondMigration.cs" />
-    <Compile Include="Migrations\202012020710241_SecondMigration.Designer.cs">
-      <DependentUpon>202012020710241_SecondMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012021344402_ThirdMigration.cs" />
-    <Compile Include="Migrations\202012021344402_ThirdMigration.Designer.cs">
-      <DependentUpon>202012021344402_ThirdMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012021646484_SeedContent.cs" />
-    <Compile Include="Migrations\202012021646484_SeedContent.Designer.cs">
-      <DependentUpon>202012021646484_SeedContent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012040549268_FourthMigration.cs" />
-    <Compile Include="Migrations\202012040549268_FourthMigration.Designer.cs">
-      <DependentUpon>202012040549268_FourthMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202012060216097_SeedContent.cs" />
+    <Compile Include="Migrations\202012060216097_SeedContent.Designer.cs">
+      <DependentUpon>202012060216097_SeedContent.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,23 +77,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202011300946453_InitialCreate.resx">
-      <DependentUpon>202011300946453_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202012041936083_InitialCreate.resx">
+      <DependentUpon>202012041936083_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012012106384_InitialMigration.resx">
-      <DependentUpon>202012012106384_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012020710241_SecondMigration.resx">
-      <DependentUpon>202012020710241_SecondMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012021344402_ThirdMigration.resx">
-      <DependentUpon>202012021344402_ThirdMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012021646484_SeedContent.resx">
-      <DependentUpon>202012021646484_SeedContent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012040549268_FourthMigration.resx">
-      <DependentUpon>202012040549268_FourthMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202012060216097_SeedContent.resx">
+      <DependentUpon>202012060216097_SeedContent.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

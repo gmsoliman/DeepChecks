@@ -38,7 +38,7 @@ namespace DeepChecks.Data
         public DbSet<Check> Checks { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Entry> Entries { get; set; }
-        public DbSet<Note> Notes { get; set; }
+        //public DbSet<Note> Notes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

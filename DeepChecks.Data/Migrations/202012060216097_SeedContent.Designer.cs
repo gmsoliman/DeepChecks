@@ -7,13 +7,13 @@ namespace DeepChecks.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class SecondMigration : IMigrationMetadata
+    public sealed partial class SeedContent : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(SecondMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(SeedContent));
         
         string IMigrationMetadata.Id
         {
-            get { return "202012020710241_SecondMigration"; }
+            get { return "202012060216097_SeedContent"; }
         }
         
         string IMigrationMetadata.Source

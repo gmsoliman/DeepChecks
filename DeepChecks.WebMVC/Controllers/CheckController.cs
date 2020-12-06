@@ -13,11 +13,11 @@ namespace DeepChecks.WebMVC.Controllers
     public class CheckController : Controller
     {
         // GET: Participant
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new CheckService(userId);
-            var model = service.GetChecks();
+            var model = service.GetCheckByRelationship(id);
 
             return View(model);
         }
@@ -25,6 +25,7 @@ namespace DeepChecks.WebMVC.Controllers
         //GET
         public ActionResult Create()
         {
+            PopulateRelationships();
             return View();
         }
 
@@ -38,22 +39,30 @@ namespace DeepChecks.WebMVC.Controllers
 
             if (service.CreateCheck(model))
             {
-                TempData["SaveResult"] = "Your Check was successfully scheduled.";
-                return RedirectToAction("Index");
+                TempData["SaveResult"] = "Your Deep Check was successfully scheduled.";
+                return RedirectToAction("Index", "Check", new { id = model.RelationshipId });
             };
 
-            ModelState.AddModelError("", "Your Check could not be created.");
+            ModelState.AddModelError("", "Your Deep Check could not be created.");
 
             return View(model);
         }
 
-        public ActionResult Details(int id)
-        {
-            var svc = CreateCheckService();
-            var model = svc.GetCheckById(id);
+        //public ActionResult Details(int id)
+        //{
+        //    var svc = CreateCheckService();
+        //    var model = svc.GetCheckById(id);
 
-            return View(model);
-        }
+        //    return View(model);
+        //}
+        
+        //public ActionResult Details(int id)
+        //{
+        //    var svc = CreateCheckService();
+        //    var model = svc.GetCheckByRelationship(id);
+
+        //    return View(model);
+        //}
 
         public ActionResult Edit(int id)
         {
@@ -65,7 +74,9 @@ namespace DeepChecks.WebMVC.Controllers
                     CheckId = detail.CheckId,
                     CheckTitle = detail.CheckTitle,
                     CheckDate = detail.CheckDate,
+                    RelationshipId = detail.RelationshipId
                 };
+            PopulateRelationships(detail.RelationshipId);
             return View(model);
         }
 
@@ -73,10 +84,15 @@ namespace DeepChecks.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, CheckListItem model)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid)
+            {
+                PopulateRelationships(model.RelationshipId);
+                return View(model);
+            }
 
             if (model.CheckId != id)
             {
+                PopulateRelationships(model.RelationshipId);
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);
             }
@@ -85,11 +101,11 @@ namespace DeepChecks.WebMVC.Controllers
 
             if (service.UpdateCheck(model))
             {
-                TempData["SaveResult"] = "Your Check was successfully updated.";
-                return RedirectToAction("Index");
+                TempData["SaveResult"] = "Your Deep Check was successfully updated.";
+                return RedirectToAction("Index", "Check", new { id = model.RelationshipId });
             }
 
-            ModelState.AddModelError("", "Your Check could not be updated.");
+            ModelState.AddModelError("", "Your Deep Check could not be updated.");
             return View(model);
         }
 
@@ -111,9 +127,9 @@ namespace DeepChecks.WebMVC.Controllers
 
             service.DeleteCheck(id);
 
-            TempData["SaveResult"] = "Your Check was deleted";
+            TempData["SaveResult"] = "Your Deep Check was deleted";
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Relationship");
         }
 
         private CheckService CreateCheckService()
@@ -121,6 +137,15 @@ namespace DeepChecks.WebMVC.Controllers
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new CheckService(userId);
             return service;
+        }
+
+        private void PopulateRelationships()
+        {
+            ViewBag.RelationshipId = new SelectList(new RelationshipService(Guid.Parse(User.Identity.GetUserId())).GetRelationships(), "RelationshipId", "RelationshipName");
+        }
+        private void PopulateRelationships(int id)
+        {
+            ViewBag.RelationshipId = new SelectList(new RelationshipService(Guid.Parse(User.Identity.GetUserId())).GetRelationships(), "RelationshipId", "RelationshipName", id);
         }
     }
 }

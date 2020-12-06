@@ -15,8 +15,10 @@ namespace DeepChecks.Models.Participant
         [Required]
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
-        [Required]
-        [DataType(DataType.EmailAddress)]
-        public string Email { get; set; }
+        //public string FullName { get; set; }
+        public int CheckId { get; set; }
+        //[Required]
+        //[DataType(DataType.EmailAddress)]
+        //public string Email { get; set; }
     }
 }

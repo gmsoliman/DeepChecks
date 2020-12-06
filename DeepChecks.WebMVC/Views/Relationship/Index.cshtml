@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Your Relationships</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -23,9 +23,6 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.RelationshipId)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.RelationshipName)
         </th>
         <th></th>
@@ -35,14 +32,11 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.RelationshipId)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.RelationshipName)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.RelationshipId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.RelationshipId }) |
+                @Html.ActionLink("View Deep Checks", "Index", "Check", new { id = item.RelationshipId }, null) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.RelationshipId })
             </td>
         </tr>

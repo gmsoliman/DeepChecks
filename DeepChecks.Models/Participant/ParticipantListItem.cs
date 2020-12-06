@@ -14,5 +14,6 @@ namespace DeepChecks.Models.Participant
         public string FirstName { get; set; }
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
+        public int CheckId { get; set; }
     }
 }
