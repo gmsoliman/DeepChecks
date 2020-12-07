@@ -4,50 +4,55 @@
     ViewBag.Title = "Index";
 }
 
-@*Participants for "X" Deep Check*@
-<h2>Participants</h2>
+<div style="background-color:floralwhite;
+      border:hidden;
+      border-radius:25px;
+      padding: 2rem;">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+    <h2>Participants</h2>
 
-@if (TempData.ContainsKey("SaveResult"))
-{
-    <div class="alert alert-success fade in" role="alert">
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
 
-        <button type="button" class="close" data-dismiss="alert">
-            <span>&times;</span>
-        </button>
-        @TempData["SaveResult"]
-    </div>
-}
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastName)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
+    @if (TempData.ContainsKey("SaveResult"))
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ParticipantId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ParticipantId }) |
-                @Html.ActionLink("View Entries", "Index", "Entry", new { id = item.ParticipantId }, null)
+        <div class="alert alert-success fade in" role="alert">
 
-            </td>
-        </tr>
+            <button type="button" class="close" data-dismiss="alert">
+                <span>&times;</span>
+            </button>
+            @TempData["SaveResult"]
+        </div>
     }
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th></th>
+        </tr>
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ParticipantId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ParticipantId }) |
+                    @Html.ActionLink("View Entries", "Index", "Entry", new { id = item.ParticipantId }, null)
+
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

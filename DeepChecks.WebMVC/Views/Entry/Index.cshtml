@@ -4,74 +4,78 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div style="background-color:floralwhite;
+      border:hidden;
+      border-radius:25px;
+      padding: 2rem;">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+    <h2>Index</h2>
 
-@if (TempData.ContainsKey("SaveResult"))
-{
-    <div class="alert alert-success fade in" role="alert">
+    <p>
+        @Html.ActionLink("Add a New Entry", "Create")
+    </p>
 
-        <button type="button" class="close" data-dismiss="alert">
-            <span>&times;</span>
-        </button>
-        @TempData["SaveResult"]
-    </div>
-}
-<table class="table">
-
-    @foreach (var item in Model)
+    @if (TempData.ContainsKey("SaveResult"))
     {
-        if (item.CategoryId == 1)
-        {
-            <tr>
-                <th>Things I'm Doing Well</th>
-            </tr>
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EntryContent)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.EntryId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.EntryId })
-                </td>
-            </tr>
-        }
+        <div class="alert alert-success fade in" role="alert">
 
-        if (item.CategoryId == 2)
-        {
-            <tr>
-                <th>Things You're Doing Well</th>
-            </tr>
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EntryContent)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.EntryId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.EntryId })
-                </td>
-            </tr>
-        }
-
-        if (item.CategoryId == 3)
-        {
-            <tr>
-                <th>Things I Need More Of</th>
-            </tr>
-            <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.EntryContent)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.EntryId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.EntryId })
-            </td>
-            </tr>
-        }
+            <button type="button" class="close" data-dismiss="alert">
+                <span>&times;</span>
+            </button>
+            @TempData["SaveResult"]
+        </div>
     }
+    <table class="table">
 
+        @foreach (var item in Model)
+        {
+            if (item.CategoryId == 1)
+            {
+                <tr>
+                    <th>Things I'm Doing Well</th>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EntryContent)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.EntryId }) 
+                        @Html.ActionLink("Delete", "Delete", new { id = item.EntryId })
+                    </td>
+                </tr>
+            }
 
-</table>
+            if (item.CategoryId == 2)
+            {
+                <tr>
+                    <th>Things You're Doing Well</th>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EntryContent)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.EntryId })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.EntryId })
+                    </td>
+                </tr>
+            }
+
+            if (item.CategoryId == 3)
+            {
+                <tr>
+                    <th>Things I Need More Of</th>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EntryContent)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.EntryId }) 
+                        @Html.ActionLink("Delete", "Delete", new { id = item.EntryId })
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</div>
