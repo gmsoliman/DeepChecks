@@ -1,0 +1,31 @@
+﻿@model DeepChecks.Models.Entry.EntryListItem
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div style="background-color:floralwhite;
+      border:hidden;
+      border-radius:25px;
+      padding: 2rem;">
+
+    <h2>Delete Entry</h2>
+
+    <h3>Are you sure you want to delete this entry?</h3>
+    <div>
+        <hr />
+        <dd>
+            @Html.DisplayFor(model => model.EntryContent)
+        </dd>
+        <br />
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to Entries", "Index", new { id = Model.ParticipantId })
+            </div>
+        }
+    </div>

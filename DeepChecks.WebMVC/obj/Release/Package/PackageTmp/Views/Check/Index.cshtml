@@ -1,0 +1,51 @@
+﻿@model IEnumerable<DeepChecks.Models.Check.CheckListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div style="background-color:floralwhite;
+      border:hidden;
+      border-radius:25px;
+      padding: 2rem;">
+
+    <h2>Deep Checks</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+    @if (TempData.ContainsKey("SaveResult"))
+    {
+        <div class="alert alert-success fade in" role="alert">
+
+            <button type="button" class="close" data-dismiss="alert">
+                <span>&times;</span>
+            </button>
+            @TempData["SaveResult"]
+        </div>
+    }
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Date</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CheckTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CheckDate)
+                </td>
+                <td>
+                    @Html.ActionLink("View Participants", "Index", "Participant", new { id = item.CheckId }, null) |
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CheckId })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CheckId })
+                </td>
+            </tr>
+        }
+        @Html.ActionLink("Back to Relationships", "Index", "Relationship")
+    </table>
+</div>

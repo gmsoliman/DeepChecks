@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=tcp:deepcheckswebmvcdbserver.database.windows.net,1433;Initial Catalog=DeepChecks.WebMVC_db;User Id=gmsoliman@deepcheckswebmvcdbserver;Password=Banana$@4814!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\ElevenFiftyProjects\\4-RedBadge\\Individual\ MVC\ Project\\DeepChecks\\DeepChecks\.WebMVC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>

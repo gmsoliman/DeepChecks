@@ -1,0 +1,45 @@
+﻿@model IEnumerable<DeepChecks.Models.Relationship.RelationshipListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div style="background-color:floralwhite;
+      border:hidden;
+      border-radius:25px;
+      padding: 2rem;">
+
+    <h2>My Relationships</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+    @if (TempData.ContainsKey("SaveResult"))
+    {
+        <div class="alert alert-success fade in" role="alert">
+
+            <button type="button" class="close" data-dismiss="alert">
+                <span>&times;</span>
+            </button>
+            @TempData["SaveResult"]
+        </div>
+    }
+    <table class="table">
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RelationshipName)
+                </td>
+                <td>
+                    @Html.ActionLink("Change Name", "Edit", new { id = item.RelationshipId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.RelationshipId }) |
+                    @Html.ActionLink("View Deep Checks", "Index", "Check", new { id = item.RelationshipId }, null)
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

@@ -1,0 +1,28 @@
+﻿@model DeepChecks.Models.Participant.ParticipantListItem
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div style="background-color:floralwhite;
+      border:hidden;
+      border-radius:25px;
+      padding: 2rem;">
+
+    <h2>Delete Participant</h2>
+
+    <h3>Are you sure you want to delete @Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)?</h3>
+    <div>
+        <h4>Doing so will delete all their entries for this Deep Check.</h4>
+        <hr />
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to Participants", "Index", new { id = Model.CheckId })
+            </div>
+        }
+    </div>
+</div>
