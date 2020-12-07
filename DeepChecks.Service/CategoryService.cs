@@ -20,16 +20,18 @@ namespace DeepChecks.Service
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var categoryQuery =
+                var query =
                     ctx
                         .Categories
-                        .Select(e => new CategoryListItem
-                        {
-                            CategoryId = e.CategoryId,
-                            CategoryTitle = e.CategoryTitle
-                        });
+                        .Select(
+                            e => 
+                                new CategoryListItem
+                                {
+                                    CategoryId = e.CategoryId,
+                                    CategoryTitle = e.CategoryTitle
+                                });
 
-                return categoryQuery.ToArray();
+                return query.ToArray();
             }
         }
         public CategoryDetail GetCategoryById(int categoryId)

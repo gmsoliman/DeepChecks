@@ -73,6 +73,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DeepChecks.Data\DeepChecks.Data.csproj">
+      <Project>{c17735b1-9fe0-451d-9b9f-961c2c9fc49a}</Project>
+      <Name>DeepChecks.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

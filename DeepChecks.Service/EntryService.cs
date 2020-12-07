@@ -75,14 +75,14 @@ namespace DeepChecks.Service
             }
         }
 
-        public IEnumerable<EntryListItem> GetParticipantEntryByCatId(int participantId, int categoryId)
+        public IEnumerable<EntryListItem> GetEntriesByParticipant(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
                     ctx
                         .Entries
-                        .Where(e => e.ParticipantId == participantId && e.CategoryId == categoryId && e.OwnerId == _userId)
+                        .Where(e => e.ParticipantId == id && e.OwnerId == _userId)
                         .Select(
                             e =>
                                 new EntryListItem

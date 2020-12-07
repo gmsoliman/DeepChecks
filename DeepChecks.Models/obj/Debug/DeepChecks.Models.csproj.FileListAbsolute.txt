@@ -14,3 +14,6 @@ C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.M
 C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Models\obj\Debug\DeepChecks.Models.csproj.CopyComplete
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Models\bin\Debug\DeepChecks.Data.dll
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Models\bin\Debug\DeepChecks.Data.pdb
+C:\ElevenFiftyProjects\4-RedBadge\Individual MVC Project\DeepChecks\DeepChecks.Models\bin\Debug\DeepChecks.Data.dll.config

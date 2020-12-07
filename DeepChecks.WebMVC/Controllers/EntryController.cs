@@ -14,11 +14,11 @@ namespace DeepChecks.WebMVC.Controllers
     public class EntryController : Controller
     {
         // GET: Participant
-        public ActionResult Index(int participantId, int categoryId)
+        public ActionResult Index(int id)
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new EntryService(userId);
-            var model = service.GetParticipantEntryByCatId(participantId, categoryId);
+            var model = service.GetEntriesByParticipant(id);
 
             return View(model);
         }

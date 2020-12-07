@@ -21,31 +21,57 @@
     </div>
 }
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.EntryId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EntryContent)
-        </th>
-        <th></th>
-    </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.EntryId)
-            </td>
+        if (item.CategoryId == 1)
+        {
+            <tr>
+                <th>Things I'm Doing Well</th>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EntryContent)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.EntryId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.EntryId })
+                </td>
+            </tr>
+        }
+
+        if (item.CategoryId == 2)
+        {
+            <tr>
+                <th>Things You're Doing Well</th>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EntryContent)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.EntryId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.EntryId })
+                </td>
+            </tr>
+        }
+
+        if (item.CategoryId == 3)
+        {
+            <tr>
+                <th>Things I Need More Of</th>
+            </tr>
+            <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.EntryContent)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.EntryId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.EntryId }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.EntryId })
             </td>
-        </tr>
+            </tr>
+        }
     }
+
 
 </table>
